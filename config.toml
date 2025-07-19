@@ -22,3 +22,7 @@ title = 'My New Hugo Site'
   [module.hugoVersion]
     extended = true
     min = '0.146.0'
+
+[params]
+  copyright = 'icysamon'
+  homepageurl = 'https://icysamon.com'
