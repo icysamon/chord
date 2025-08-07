@@ -1,6 +1,6 @@
-baseURL = 'https://icysamon.com/'
+baseURL = 'https://animebgm.com/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = 'Anime BGM'
 
 [menus]
   [[menus.main]]
