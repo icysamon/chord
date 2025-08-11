@@ -1,0 +1,66 @@
+@import "variables.scss";
+
+body {
+  color: var(--color);
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 768px;
+  background-color: var(--background-color);
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: var(--color-a);
+  text-decoration: none;
+}
+
+nav {
+  background: var(--background-color-nav);
+  border-radius: 12px;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li{
+  padding: 1rem;
+}
+
+nav ul li:hover{
+  background-color: var(--background-color-nav-hover);
+  transition: background-color 0.3s;
+}
+
+h1.title {
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 0;
+  color: var(color--heading);
+}
+
+audio {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+div.post {
+  margin-block: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color-post);
+  border-radius: 8px;
+}
