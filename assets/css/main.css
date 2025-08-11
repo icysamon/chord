@@ -50,3 +50,15 @@ h1.title {
   margin: 0;
   color: rgb(218, 77, 147);
 }
+
+audio {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+div.post {
+  margin-block: 1rem;
+  padding: 1rem;
+  background-color: #ffcef0;
+  border-radius: 8px;
+}

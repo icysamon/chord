@@ -1,7 +1,12 @@
 {{ define "main" }}
   {{ .Content }}
   {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    <div class="post">
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ .Summary }}<br>
+      {{ if .Params.audio }}
+        <audio controls preload="auto" src="{{ .Params.audio }}"></audio>
+      {{ end }}
+    </div>
   {{ end }}
 {{ end }}
