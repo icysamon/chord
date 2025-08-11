@@ -28,7 +28,7 @@ a {
 
 nav {
   background: var(--background-color-nav);
-  border-radius: 12px;
+  border-radius: var(--border-radius-default);
 
 }
 
@@ -46,11 +46,15 @@ nav ul li:hover{
   transition: background-color 0.3s;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color--heading);
+}
+
 h1.title {
   font-size: 1rem;
   padding: 1rem;
   margin: 0;
-  color: var(color--heading);
+  color: var(--color--heading);
 }
 
 audio {
@@ -58,9 +62,10 @@ audio {
   margin-top: 1rem;
 }
 
-div.post {
+div.card, div.page {
   margin-block: 1rem;
   padding: 1rem;
   background-color: var(--background-color-post);
-  border-radius: 8px;
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--shadow-post);
 }
