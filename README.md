@@ -1,2 +1,3 @@
-# dolphin
+# Chord
+Hugo Theme.
 
