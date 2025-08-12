@@ -3,6 +3,13 @@
   {{ range site.RegularPages }}
     <div class="card">
       <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      <div>
+        {{- with .Params.Tags }}
+          {{- range . }}
+            <span class="tag"><a href={{ "/tags/" | relURL }}{{ . | urlize }}><img src={{- (resources.Get "svg/tag.svg").RelPermalink }} width="16" height="16"> {{ . }}</a></span>
+          {{- end }}
+        {{- end }}
+      </div>
       {{ .Summary }}<br>
       {{ if .Params.audio }}
         <audio controls preload="auto" src="{{ .Params.audio }}"></audio>
