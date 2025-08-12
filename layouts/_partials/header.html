@@ -15,7 +15,7 @@
 {{- define "_partials/inline/license/walk.html" }}
   <div class="grid-container">
     {{- range . }}
-      <div style="display:flex;">
+      <div class="grid-license">
         {{- with resources.Get .svg }}
           <p><img src={{- .RelPermalink }} width="30" height="30"></p>
         {{- end }}
