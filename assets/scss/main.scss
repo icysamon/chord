@@ -69,3 +69,26 @@ div.card, div.page {
   border-radius: var(--border-radius-default);
   box-shadow: var(--shadow-post);
 }
+
+.license {
+  font-weight: bold;
+}
+
+.terms-of-service {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #494949;
+}
+
+div .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+div .center {
+  text-align: center;
+}
+
+.grid-container div {
+  margin: auto;
+}
