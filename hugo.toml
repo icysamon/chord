@@ -1,21 +1,18 @@
 baseURL = 'https://animebgm.com/'
-languageCode = 'en-US'
+languageCode = 'ja-jp'
+title = 'アニメ系 BGM'
+theme = 'chord'
 
 [menus]
   [[menus.main]]
     name = 'Home'
     pageRef = '/'
     weight = 10
-
+  
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'About'
+    pageRef = '/page/about/'
     weight = 20
-
-  [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
-    weight = 30
 
 [module]
   [module.hugoVersion]
@@ -49,3 +46,11 @@ languageCode = 'en-US'
 [params]
   copyright = 'icysamon'
   homepageurl = 'https://animebgm.com'
+
+[permalinks]
+  post = '/post/:year/:month/:slug/'
+  page = '/:slug/'
+
+[Params]
+  [Assets]
+    favicon = '/favicon.ico'
