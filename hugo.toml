@@ -23,7 +23,7 @@ languageCode = 'en-US'
     min = '0.146.0'
 
 [params.license]
-  link = '/'
+  link = '/terms-of-service/'
   text = '利用規約はこちら'
 
   [[params.license.main]]
