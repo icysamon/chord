@@ -10,7 +10,9 @@
           {{- end }}
         {{- end }}
       </div>
-      {{ .Summary }}<br>
+      {{- if gt (len .Params.Summary) 0 }}
+        {{ .Summary }}<br>
+      {{- end}}
       {{ if .Params.download }}
         {{- range .Params.download }}
           {{- if and (eq .type "streaming") (gt (len .link) 0) }}
