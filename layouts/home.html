@@ -11,6 +11,19 @@
         {{- end }}
       </div>
       {{ .Summary }}<br>
+      {{ if .Params.download }}
+        {{- range .Params.download }}
+          {{- if and (eq .type "streaming") (gt (len .link) 0) }}
+            <span class="download">
+              <a href={{ .link }} target="blank">配信リリース</a>
+            </span>
+          {{- else}}
+            <span class="download">
+              <a href={{ .link }} download><img src={{- (resources.Get "svg/download.svg").RelPermalink }} width="16" height="16"> {{ .type }}</a>
+            </span>
+          {{- end }} 
+        {{- end }}
+      {{ end }}
       {{ if .Params.audio }}
         <audio controls preload="auto" src="{{ .Params.audio }}"></audio>
       {{ end }}

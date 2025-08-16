@@ -98,11 +98,17 @@ div .center {
 }
 span.tag {
   display: inline-block;
-  background-color: var(--background-color-tag);
-  border-radius: var(--border-radius-default);
+  font-weight: 600;
+  font-size: small;
+  margin-bottom: 0.25rem;
+}
+span.download {
+  display: inline-block;
+  background-color: var(--background-color-button);
+  border-radius: var(--border-radius-button);
   padding: 0.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+  margin-bottom: 0.75rem;
+  margin-inline: 0.25rem;
 }
 
 span.tag a{
