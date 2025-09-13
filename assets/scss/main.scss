@@ -115,3 +115,22 @@ span.download {
 span.tag a{
   color: var(--color-tag);
 }
+
+ul.label {
+  list-style: none;
+  margin-block-start: 2rem;
+  padding-inline-start: 0;
+}
+
+ul.label li {
+  display: inline;
+  margin-right: 1rem;
+  padding: 0.4rem;
+  border-radius: var(--border-radius-button);
+  background-color: var(--background-color-tag);
+}
+
+ul.label li:hover{
+  background-color: var(--background-color-nav-hover);
+  transition: background-color 0.3s;
+}
