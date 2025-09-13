@@ -6,6 +6,10 @@
     {{ $dateHuman := .Date | time.Format ":date_long" }}
     <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
+    {{- with .Params.Audio}}
+      <audio controls preload="auto" src="{{ . }}"></audio>
+    {{- end }}
+
     {{ .Content }}
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   </div>
