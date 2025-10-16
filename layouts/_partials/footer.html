@@ -1,2 +1,10 @@
-<p>© {{ now.Year }} <a href="{{ site.Params.homepageurl }}" target="_blank">{{ site.Params.copyright }}</a>. All Rights Reserved.</p>
+{{- if .Site.Params.copyright }}
+	{{- if not (string .Site.Params.year) }}
+		{{- else if ne (string .Site.Params.year) (string now.Year) }}
+			<p>© {{ .Site.Params.year }} - {{ now.Year }} <a href={{- site.Params.homepageurl }} target="_blank">{{ site.Params.copyright }}</a>. All Rights Reserved.</p>
+		{{- else }}
+			<p>© {{ now.Year }} <a href={{- site.Params.homepageurl }} target="_blank">{{ site.Params.copyright }}</a>. All Rights Reserved.</p>
+	{{- end }}
+{{- end -}}
+<!-- Do not remove the "Theme Chord designed by icysamon.". It is required by the license. -->
 <p>Theme <a href="https://github.com/icysamon/chord" target="_blank">Chord</a> designed by <a href="https://icysamon.com" target="_blank">icysamon</a>.</p>
