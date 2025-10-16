@@ -34,7 +34,7 @@ a {
 }
 
 nav {
-  background: var(--background-color-nav);
+  background: var(--background-color-card);
   border-radius: var(--border-radius-default);
 
 }
@@ -49,7 +49,7 @@ nav ul li{
 }
 
 nav ul li:hover{
-  background-color: var(--background-color-nav-hover);
+  background-color: var(--background-color-card-hover);
   transition: background-color 0.3s;
 }
 
@@ -72,7 +72,7 @@ audio {
 div.card, div.page {
   margin-block: 1rem;
   padding: 1rem;
-  background-color: var(--background-color-post);
+  background-color: var(--background-color-card);
   border-radius: var(--border-radius-default);
   box-shadow: var(--shadow-post);
 }
@@ -84,7 +84,7 @@ div.card, div.page {
 .terms-of-service {
   font-weight: bold;
   text-decoration: underline;
-  color: #494949;
+  color: var(--color-a);
 }
 
 div .grid-container {
@@ -134,10 +134,10 @@ ul.label li {
   margin-right: 1rem;
   padding: 0.4rem;
   border-radius: var(--border-radius-button);
-  background-color: var(--background-color-tag);
+  background-color: var(background-color-button);
 }
 
 ul.label li:hover{
-  background-color: var(--background-color-nav-hover);
+  background-color: var(--background-color-card-hover);
   transition: background-color 0.3s;
 }
