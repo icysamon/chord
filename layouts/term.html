@@ -1,7 +1,12 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <div class="card">
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ if .Params.audio }}
+            <audio controls preload="auto" src="{{ .Params.audio }}"></audio>
+      {{ end }}
+    </div>
   {{ end }}
 {{ end }}

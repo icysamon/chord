@@ -1,6 +1,5 @@
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
-
 {{- with .Site.Params.license.main }}
   <div class="card">
     {{ partial "inline/license/walk.html" . }}
