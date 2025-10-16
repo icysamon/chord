@@ -16,7 +16,7 @@
     {{- range . }}
       <div class="grid-license">
         {{- with resources.Get .svg }}
-          <p><img src={{- .RelPermalink }} width="30" height="30"></p>
+          <img src={{- .RelPermalink }} width="32" height="32">
         {{- end }}
         {{- with .text }}
           <p class="license">&nbsp;{{ . }}</p>

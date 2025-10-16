@@ -33,6 +33,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 nav {
   background: var(--background-color-card);
   border-radius: var(--border-radius-default);
@@ -83,8 +87,7 @@ div.card, div.page {
 
 .terms-of-service {
   font-weight: bold;
-  text-decoration: underline;
-  color: var(--color-a);
+  font-size: large;
 }
 
 div .grid-container {
@@ -93,6 +96,8 @@ div .grid-container {
 }
 
 div .grid-license {
+  align-items: center;
+  justify-content: center;
   display:flex;
 }
 
