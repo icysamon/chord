@@ -1,12 +1,12 @@
 :root {
-    --background-color: #fff4f4;
-    --background-color-card: #fffbfb;
-    --background-color-card-hover: #ffbebe;
-    --background-color-button: #ffebe7;
-    --color: #222;
-    --color-a: rgb(238, 0, 99);
-    --color-heading: rgb(238, 0, 99);
-    --color-tag: #494949;
+    --background-color: oklch(97% 0.001 106.424);
+    --background-color-card: oklch(98.5% 0.001 106.423);
+    --background-color-card-hover: oklch(92.9% 0.013 255.508);
+    --background-color-button: oklch(97% 0.001 106.424);
+    --color: oklch(14.7% 0.004 49.25);
+    --color-a: oklch(59.2% 0.249 0.584);
+    --color-heading: oklch(37.2% 0.044 257.287);
+    --color-tag: oklch(37.4% 0.01 67.558);
     --color-footer:rgb(122, 122, 122);
     --shadow-post: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
     --border-radius-default: 24px;
