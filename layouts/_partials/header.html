@@ -1,11 +1,10 @@
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-
-{{- with .Site.Params.license.main }}
+{{- partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{- with .Site.Params.license.terms }}
   <div class="card">
-    {{ partial "inline/license/walk.html" . }}
+    {{- partial "inline/license/walk.html" . }}
     <div class="center">
       {{- with $.Site.Params.license.link }}
-        <a class="terms-of-service" href={{- . -}}>{{- $.Site.Params.license.text -}}</a>
+        <a class="terms-of-service" href={{- . -}}>{{- $.Site.Params.license.text }}</a>
       {{- end }}
     </div>
   </div>

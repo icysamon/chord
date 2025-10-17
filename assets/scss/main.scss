@@ -40,21 +40,17 @@ a:hover {
 nav {
   background: var(--background-color-card);
   border-radius: var(--border-radius-default);
-
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 nav ul li{
-  padding: 1rem;
-}
-
-nav ul li:hover{
-  background-color: var(--background-color-card-hover);
-  transition: background-color 0.3s;
+  margin-block: auto;
+  padding-left: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,9 +58,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.title {
-  font-size: 1rem;
-  padding: 1rem;
-  margin: 0;
+  font-size: large;
+  padding-block: 1rem;
+  margin-block: 0.25rem;
   color: var(--color-heading);
 }
 
