@@ -11,12 +11,31 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
+  <div class="card menu_pc">
+    <nav>
+      <ul>
+        <h1 class="title"><a href="/">{{ site.Title }}</a></h1>
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu_mobile">
+    <div style="display: flex; flex-direction: row; align-items: center; width:100%">
       <h1 class="title"><a href="/">{{ site.Title }}</a></h1>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
-  </nav>
+      <a href="javascript:void(0);" style="margin-left: auto;" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <div class="menu_mobile_list" id="menuMobileList">
+      <nav>
+        <ul style="padding-left: 0;">
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      </nav>
+    </div> 
+  </div>
 {{- end }}
 
 {{- define "_partials/inline/menu/walk.html" }}
