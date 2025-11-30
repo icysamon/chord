@@ -31,14 +31,16 @@
   display: none;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
 
 body {
   color: var(--color);
   font-family: sans-serif, Arial;
   line-height: 1.5;
   margin: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
   max-width: 768px;
   background-color: var(--background-color);
 }
