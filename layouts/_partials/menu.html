@@ -11,7 +11,7 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <div class="card menu_pc">
+  <div class="card menu_pc" style="padding: 0.1rem;">
     <nav>
       <ul>
         <h1 class="title"><a href="/">{{ site.Title }}</a></h1>
