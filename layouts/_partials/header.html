@@ -1,7 +1,7 @@
 {{- partial "menu.html" (dict "menuID" "main" "page" .) }}
-{{- with .Site.Params.license.terms }}
+{{- with .Site.Params.image }}
   <div style="margin-block:1rem; background-color: var(--background-color-card); border-radius: var(--border-radius-default); box-shadow: var(--shadow-post);">
-    {{- with $.Site.Params.image }}
+    {{- with . }}
       {{- if $.IsHome }}
         <a href="/">
           <img src={{- . }} width="100%" height="350px" style="object-fit: cover; border-radius: var(--border-radius-default); center; display: block;">
