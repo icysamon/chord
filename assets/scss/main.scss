@@ -38,8 +38,9 @@ a:hover {
 }
 
 nav {
-  background: var(--background-color-card);
+  background-color: var(--background-color-card);
   border-radius: var(--border-radius-default);
+  box-shadow: var(--shadow-post);
 }
 
 nav ul {
