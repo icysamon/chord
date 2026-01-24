@@ -182,3 +182,44 @@ ul.label li:hover{
   background-color: var(--background-color-card-hover);
   transition: background-color 0.3s;
 }
+
+/* pager */
+.pager ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    gap: 10px;
+}
+
+.pager li {
+    display: inline-block;
+}
+
+.pager a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-button);
+    color: var(--color);
+    transition: all 0.2s;
+    background-color: var(--background-color-card);
+}
+
+.pager a:hover {
+    background-color: var(--background-color-card);
+    border-color: var(background-color-card-hover);
+}
+
+.pager li.active a {
+    background-color: #000;
+    color: #fff;
+    border-color: var(--color-border-active);
+}
+
+.pager li.disabled a {
+    color: #ccc;
+    pointer-events: none;
+    border-color: var(--color-border-disabled);
+}

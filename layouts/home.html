@@ -1,6 +1,8 @@
 {{ define "main" }}
   {{ .Content }}
-  {{ range where site.RegularPages "Type" "post" }}
+  {{ $pages := where site.RegularPages "Type" "post" }}
+  {{ $paginator := .Paginate $pages }}
+  {{ range $paginator.Pages }}
     <div class="card">
       <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
       <div>
@@ -31,4 +33,8 @@
       {{ end }}
     </div>
   {{ end }}
+
+  <div class="pager">
+      {{ template "_internal/pagination.html" . }}
+  </div>
 {{ end }}
