@@ -8,14 +8,14 @@
     {{- end }}
 
     {{- with .Params.Audio}}
-      <audio controls preload="auto" src="{{ . }}"></audio>
+      <audio controls preload="auto" src="{{ . }}" style="margin-block: 1.5rem;" ></audio>
     {{- end }}
 
     {{- with .Params.download }}
       {{- range . }}
         {{- if and (eq .type "streaming") (gt (len .link) 0) }}
           <span class="download">
-            <a href={{ .link }} target="blank">配信リリース</a>
+            <a href={{ .link }} target="blank">音楽配信</a>
           </span>
         {{- else}}
           <span class="download">

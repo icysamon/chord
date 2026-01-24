@@ -160,19 +160,25 @@ span.download {
   font-size: normal;
 }
 
-span.tag a{
+span.download:hover {
+  background-color: var(--background-color-card-hover);
+  transition: background-color 0.3s;
+}
+
+span.tag a, span.download a, ul.label a {
   color: var(--color-tag);
 }
 
 ul.label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
   list-style: none;
-  margin-block-start: 2rem;
+  margin-block-start: 1rem;
   padding-inline-start: 0;
 }
 
 ul.label li {
-  display: inline;
-  margin-right: 1rem;
   padding: 0.4rem;
   border-radius: var(--border-radius-button);
   background-color: var(--background-color-button);
