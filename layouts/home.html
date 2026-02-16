@@ -6,10 +6,13 @@
     <div class="card">
       <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
       <div>
-        {{- with .Params.Tags }}
-          {{- range . }}
-            <span class="tag"><a href={{ "/tags/" | relURL }}{{ . | urlize }}><img src={{- (resources.Get "svg/tag.svg").RelPermalink }} width="16" height="16"> {{ . }}</a></span>
-          {{- end }}
+        {{- range (.GetTerms "tags") }}
+          <span class="tag">
+            <a href="{{ .RelPermalink }}">
+              <img src="{{ (resources.Get "svg/tag.svg").RelPermalink }}" width="16" height="16"> 
+              {{ .LinkTitle }}
+            </a>
+          </span>
         {{- end }}
       </div>
       {{- if gt (len .Params.Summary) 0 }}
@@ -19,7 +22,7 @@
         {{- range .Params.download }}
           {{- if and (eq .type "streaming") (gt (len .link) 0) }}
             <span class="download">
-              <a href={{ .link }} target="blank">音楽配信</a>
+              <a href={{ .link }} target="blank">{{ T "streaming" }}</a>
             </span>
           {{- else}}
             <span class="download">

@@ -229,3 +229,84 @@ ul.label li:hover{
     pointer-events: none;
     border-color: var(--color-border-disabled);
 }
+
+/* --- Language Switcher Styles --- */
+
+/* 1. Outer Container (Track) */
+.lang-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 120px;       /* Width, adjustable */
+  height: 36px;       /* Height */
+  background-color: #e5e7eb; /* Light gray background */
+  border-radius: 9999px;     /* Fully rounded corners */
+  padding: 4px;              /* Padding */
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;     /* Remove underline */
+  transition: background-color 0.3s;
+}
+
+/* 2. Slider (White rounded background) */
+.switch-slider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);    /* Width minus padding */
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition animation */
+  z-index: 1;
+}
+
+/* 3. General Text Styles */
+.lang-text {
+  position: relative;
+  z-index: 2;         /* Must be higher than the slider to display on top */
+  flex: 1;            /* Split width equally */
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+/* --- State Control Logic --- */
+
+/* Scenario A: Current is Japanese (Default State) */
+.lang-switch.current-ja .switch-slider {
+  transform: translateX(0); /* Slider on the left */
+}
+.lang-switch.current-ja .text-ja {
+  color: #f43f5e; /* Rose Red (Active/Highlight) */
+}
+.lang-switch.current-ja .text-en {
+  color: #9ca3af; /* Gray (Inactive) */
+}
+
+/* Scenario B: Current is English */
+.lang-switch.current-en .switch-slider {
+  transform: translateX(100%); /* Slider slides to the right */
+}
+.lang-switch.current-en .text-ja {
+  color: #9ca3af; /* Gray (Inactive) */
+}
+.lang-switch.current-en .text-en {
+  color: #f43f5e; /* Rose Red (Active/Highlight) */
+}
+
+
+/* --- (Optional) Dark Mode Support --- */
+/* Use this if your site has class="dark" on body or relies on media queries */
+@media (prefers-color-scheme: dark) {
+  .lang-switch {
+    background-color: #374151; /* Dark gray background */
+  }
+  .switch-slider {
+    background-color: #4b5563; /* Darker slider color */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

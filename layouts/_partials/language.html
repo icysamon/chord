@@ -1,0 +1,54 @@
+{{/* layouts/partials/lang-toggle.html */}}
+
+{{ $isEn := eq .Lang "en" }}
+{{ $targetLink := "" }}
+
+{{/* Logic to find the corresponding language link */}}
+{{ range .AllTranslations }}
+  {{ if ne .Lang $.Lang }}
+    {{ $targetLink = .Permalink }}
+  {{ end }}
+{{ end }}
+
+{{/* Fallback: if no translation found, link to the homepage of the other language */}}
+{{ if eq $targetLink "" }}
+  {{ range .Site.Home.AllTranslations }}
+    {{ if ne .Lang $.Lang }}
+      {{ $targetLink = .Permalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<a 
+  href="{{ $targetLink }}" 
+  class="lang-switch {{ if $isEn }}current-en{{ else }}current-ja{{ end }}"
+  onclick="handleLangSwitch(event, '{{ $targetLink }}')"
+>
+  <span class="switch-slider"></span>
+  <span class="lang-text text-ja">JP</span>
+  <span class="lang-text text-en">EN</span>
+</a>
+
+<script>
+function handleLangSwitch(e, targetUrl) {
+  // 1. Prevent default browser behavior (immediate redirection)
+  e.preventDefault();
+
+  const element = e.currentTarget;
+  const isEn = element.classList.contains('current-en');
+  
+  // 2. Force style toggle to let user see the slider animation
+  if (isEn) {
+    element.classList.remove('current-en');
+    element.classList.add('current-ja'); // Slider moves left
+  } else {
+    element.classList.remove('current-ja');
+    element.classList.add('current-en'); // Slider moves right
+  }
+
+  // 3. Wait 300ms (matching CSS animation time) before redirecting
+  setTimeout(function() {
+    window.location.href = targetUrl;
+  }, 300); 
+}
+</script>

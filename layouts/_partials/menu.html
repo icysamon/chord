@@ -14,7 +14,7 @@ Renders a menu for the given menu ID.
   <div class="card menu_pc" style="padding: 0.1rem;">
     <nav>
       <ul>
-        <h1 class="title"><a href="/">{{ site.Title }}</a></h1>
+        <h1 class="title"><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></h1>
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       </ul>
     </nav>
@@ -22,7 +22,7 @@ Renders a menu for the given menu ID.
 
   <div class="menu_mobile">
     <div style="display: flex; flex-direction: row; align-items: center; width:100%">
-      <h1 class="title"><a href="/">{{ site.Title }}</a></h1>
+      <h1 class="title"><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></h1>
       <a href="javascript:void(0);" style="margin-left: auto;" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
