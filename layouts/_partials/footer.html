@@ -18,3 +18,57 @@ function myFunction() {
   }
 }
 </script>
+
+<script>
+// 1. Set a key to identify the scroll position immediately upon page reload
+const SCROLL_KEY = "hugo_scroll_pos";
+
+function handleLangSwitch(e, targetUrl) {
+  e.preventDefault();
+  
+  // Save the current scroll position
+  sessionStorage.setItem(SCROLL_KEY, window.scrollY);
+
+  const element = e.currentTarget;
+  
+  // Check if the switch is currently on the "Right" side
+  const isRight = element.classList.contains('state-right');
+  
+  if (isRight) {
+    // Move slider to the Left
+    element.classList.remove('state-right');
+    element.classList.add('state-left');
+  } else {
+    // Move slider to the Right
+    element.classList.remove('state-left');
+    element.classList.add('state-right');
+  }
+
+  // Animation logic (unchanged)
+  setTimeout(function() {
+    window.location.href = targetUrl;
+  }, 300); 
+}
+
+// 2. Immediate restoration logic (IIFE)
+// No need to wait for the 'load' event; runs immediately when the script is parsed
+(function() {
+  const scrollPos = sessionStorage.getItem(SCROLL_KEY);
+  
+  if (scrollPos) {
+    // A. Key: Tell the browser "leave scroll control to me" to prevent automatic jumping
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // B. Attempt to restore before DOM rendering (Crucial for preventing flash)
+    window.scrollTo(0, parseInt(scrollPos));
+
+    // C. Double safety: Correct it again at DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", function() {
+      window.scrollTo(0, parseInt(scrollPos));
+      sessionStorage.removeItem(SCROLL_KEY); // One-time use; clear immediately
+    });
+  }
+})();
+</script>

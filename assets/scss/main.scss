@@ -277,24 +277,24 @@ ul.label li:hover{
 /* --- State Control Logic --- */
 
 /* Scenario A: Current is Japanese (Default State) */
-.lang-switch.current-ja .switch-slider {
+.lang-switch.state-left .switch-slider {
   transform: translateX(0); /* Slider on the left */
 }
-.lang-switch.current-ja .text-ja {
+.lang-switch.state-left .label-left {
   color: #f43f5e; /* Rose Red (Active/Highlight) */
 }
-.lang-switch.current-ja .text-en {
+.lang-switch.state-left .label-right {
   color: #9ca3af; /* Gray (Inactive) */
 }
 
 /* Scenario B: Current is English */
-.lang-switch.current-en .switch-slider {
+.lang-switch.state-right .switch-slider {
   transform: translateX(100%); /* Slider slides to the right */
 }
-.lang-switch.current-en .text-ja {
+.lang-switch.state-right .label-left {
   color: #9ca3af; /* Gray (Inactive) */
 }
-.lang-switch.current-en .text-en {
+.lang-switch.state-right .label-right {
   color: #f43f5e; /* Rose Red (Active/Highlight) */
 }
 

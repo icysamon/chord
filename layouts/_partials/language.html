@@ -1,16 +1,23 @@
 {{/* layouts/partials/lang-toggle.html */}}
 
-{{ $isEn := eq .Lang "en" }}
-{{ $targetLink := "" }}
+{{/* --- 1. Get Sorted Languages (Generic Logic) --- */}}
+{{/* Sort all site languages by Weight. Index 0 is Left, Index 1 is Right. */}}
+{{ $sorted := sort site.Languages "Weight" }}
+{{ $leftLang := index $sorted 0 }}
+{{ $rightLang := index $sorted 1 }}
 
-{{/* Logic to find the corresponding language link */}}
+{{/* --- 2. Determine Labels --- */}}
+{{/* Try to read a custom param 'toggleLabel' from config, fallback to LanguageName */}}
+{{ $leftLabel := $leftLang.Params.label | default $leftLang.LanguageName }}
+{{ $rightLabel := $rightLang.Params.label | default $rightLang.LanguageName }}
+
+{{/* --- 3. Determine Target Link --- */}}
+{{ $targetLink := "" }}
 {{ range .AllTranslations }}
   {{ if ne .Lang $.Lang }}
     {{ $targetLink = .Permalink }}
   {{ end }}
 {{ end }}
-
-{{/* Fallback: if no translation found, link to the homepage of the other language */}}
 {{ if eq $targetLink "" }}
   {{ range .Site.Home.AllTranslations }}
     {{ if ne .Lang $.Lang }}
@@ -19,36 +26,18 @@
   {{ end }}
 {{ end }}
 
+{{/* --- 4. Determine Active State --- */}}
+{{/* If current page lang matches the Right Language (Weight 2), set active class */}}
+{{ $isRightActive := eq .Lang $rightLang.Lang }}
+
 <a 
   href="{{ $targetLink }}" 
-  class="lang-switch {{ if $isEn }}current-en{{ else }}current-ja{{ end }}"
+  class="lang-switch {{ if $isRightActive }}state-right{{ else }}state-left{{ end }}"
   onclick="handleLangSwitch(event, '{{ $targetLink }}')"
 >
   <span class="switch-slider"></span>
-  <span class="lang-text text-ja">JP</span>
-  <span class="lang-text text-en">EN</span>
-</a>
-
-<script>
-function handleLangSwitch(e, targetUrl) {
-  // 1. Prevent default browser behavior (immediate redirection)
-  e.preventDefault();
-
-  const element = e.currentTarget;
-  const isEn = element.classList.contains('current-en');
   
-  // 2. Force style toggle to let user see the slider animation
-  if (isEn) {
-    element.classList.remove('current-en');
-    element.classList.add('current-ja'); // Slider moves left
-  } else {
-    element.classList.remove('current-ja');
-    element.classList.add('current-en'); // Slider moves right
-  }
-
-  // 3. Wait 300ms (matching CSS animation time) before redirecting
-  setTimeout(function() {
-    window.location.href = targetUrl;
-  }, 300); 
-}
-</script>
+  <span class="lang-text label-left">{{ $leftLabel }}</span>
+  
+  <span class="lang-text label-right">{{ $rightLabel }}</span>
+</a>
