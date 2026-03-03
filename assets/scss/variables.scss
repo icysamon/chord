@@ -1,12 +1,13 @@
 :root {
     --background-color: oklch(97% 0.001 106.424);
     --background-color-card: oklch(98.5% 0.001 106.423);
-    --background-color-card-hover: oklch(75.402% 0.00009 271.152);
-    --background-color-button: oklch(90.295% 0.00324 15.477);
+    --background-color-card-hover: oklch(57.863% 0.20577 26.53);
+    --background-color-button: oklch(70.572% 0.1552 17.97);
     --color: oklch(14.7% 0.004 49.25);
     --color-a: oklch(59.336% 0.15058 245.389 / 0.93);
     --color-heading: oklch(37.2% 0.044 257.287);
-    --color-tag: oklch(37.4% 0.01 67.558);
+    --color-tag: oklch(100% 0.00011 271.152);
+    --background-color-tag: oklch(66.442% 0.09841 225.225);
     --color-footer:rgb(122, 122, 122);
     --shadow-post: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
     --border-radius-default: 24px;
@@ -20,7 +21,8 @@
         --background-color: oklch(21% 0.006 285.885);
         --background-color-card: oklch(37% 0.013 285.805);
         --background-color-card-hover: oklch(44.226% 0.00005 271.152);
-        --background-color-button: oklch(32.245% 0.01071 278.234);
+        --background-color-button: oklch(44.733% 0.01492 275.799);
+        --background-color-tag: oklch(39.031% 0.0403 223.383);
         --color: oklch(98.5% 0.001 106.423);
         --color-a: oklch(80.9% 0.105 251.813);
         --color-heading: oklch(98.5% 0.001 106.423);

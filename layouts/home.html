@@ -9,7 +9,6 @@
         {{- range (.GetTerms "tags") }}
           <span class="tag">
             <a href="{{ .RelPermalink }}">
-              <img src="{{ (resources.Get "svg/tag.svg").RelPermalink }}" width="16" height="16"> 
               {{ .LinkTitle }}
             </a>
           </span>

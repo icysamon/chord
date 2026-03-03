@@ -146,9 +146,13 @@ div .center {
 }
 span.tag {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   font-size: small;
   margin-bottom: 1rem;
+  background-color:var(--background-color-tag);
+  border-radius: var(--border-radius-button);
+  margin-right: 0.5rem;
+  padding: 0.3rem;
 }
 span.download {
   display: inline-block;
